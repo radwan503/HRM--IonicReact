@@ -15,12 +15,12 @@ import React from "react";
 
 const ForgetPassword: React.FC = () => {
   return (
-    <IonPage id="login-page">
+    <IonPage id="forget-password-page">
       <IonContent class="background">
         <IonGrid>
           <IonRow className="ion-justify-content-center">
             <IonCol size-sm="12" size-md="4" size-lg="4">
-              <div className="login-form">
+              <div className="forget-form login-form">
                 <IonRow className="ion-text-center">
                   <IonCol className="login-logo">
                     <IonText>
