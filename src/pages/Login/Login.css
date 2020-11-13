@@ -30,6 +30,7 @@ ion-content.background {
     font-size: 13px;
     font-family: sans-serif;
     text-transform: capitalize;
+    cursor: pointer;
 }
 
 

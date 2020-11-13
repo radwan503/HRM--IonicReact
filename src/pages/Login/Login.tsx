@@ -8,14 +8,20 @@ import {
   IonLabel,
   IonList,
   IonPage,
-  IonRouterLink,
   IonRow,
   IonText,
 } from "@ionic/react";
-import React from "react";
+import React, { useState } from "react";
+import ForgetModal from "../../components/ForgetModal/ForgetModal";
 import "../Login/Login.css";
 
 const Login: React.FC = () => {
+  const [forgetModal, setForgetModal] = useState({ isOpen: false });
+
+  const onModalClose = () => {
+    setForgetModal({ isOpen: false });
+  };
+
   return (
     <IonPage>
       <IonContent class="background">
@@ -63,11 +69,18 @@ const Login: React.FC = () => {
 
                   <IonRow className="ion-text-right">
                     <IonCol className="ion-no-margin ion-no-padding">
-                      <IonRouterLink href="/forgetpassword">
-                        <IonText color="primary" className="login-text">
-                          Forget Password?
-                        </IonText>
-                      </IonRouterLink>
+                      <ForgetModal
+                        isOpen={forgetModal.isOpen}
+                        onClose={onModalClose}
+                      ></ForgetModal>
+
+                      <IonText
+                        color="primary"
+                        className="login-text"
+                        onClick={() => setForgetModal({ isOpen: true })}
+                      >
+                        Forget Password?
+                      </IonText>
                     </IonCol>
                   </IonRow>
 
